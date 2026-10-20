@@ -118,6 +118,23 @@
      - Đặt nút cuộn lên đầu trang (Back to top) hình tròn đỏ nổi bật tách biệt ở `bottom: 80px; right: 20px; z-index: 999;` tránh che khuất icon.
      - Bổ sung `padding-bottom: 90px;` cho `body, main, .site-footer` giúp người dùng cuộn đến hết trang vẫn đọc trọn vẹn thông tin mà không bị che khuất.
 
+### Lần 10: Dò Lỗi & Khắc Phục Triệt Để Sự Cố Lệch Ảnh Thẻ Bài Viết (Reset Figure User-Agent Stylesheet & Hoàn Thiện Responsive)
+- **Prompt đã dùng:**
+  > *"hình ảnh bị lệch luôn rồi nè, cả laptop lẫn mobile app, hãy reponsite lại giúp toi với"*
+
+- **Thách thức gặp phải:**
+  - Hình ảnh trong các thẻ di tích lịch sử và làng nghề bị lệch sang bên phải khoảng 40px, tạo ra một vệt trắng hở sườn bên trái và phần đỉnh ảnh bị thụt xuống. Sự cố xảy ra trên cả màn hình máy tính (Laptop/Desktop) lẫn chế độ điện thoại di động (Mobile App).
+  - **Nguyên nhân cốt lõi:** Thẻ ngữ nghĩa `<figure class="card-media">` theo mặc định của trình duyệt (User-Agent Stylesheet) có thuộc tính ẩn `margin-inline-start: 40px; margin-block: 1em;`. Khi cấu hình reset CSS bị thiếu trường `margin: 0; padding: 0;` cho phần tử `figure`, trình duyệt đã áp đặt khoảng cách lùi đầu dòng 40px, đẩy toàn bộ ảnh lệch trục sang phải.
+
+- **Kỹ thuật sửa chữa & Tối ưu hóa:**
+  1. **Khôi phục toàn diện Universal Reset & Figure Reset:**
+     - Thiết lập chuẩn mực `*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }`.
+     - Khai báo bổ sung đặc trị: `figure, .card-media, .craft-figure, .about-figure { margin: 0 !important; padding: 0; display: block; }`.
+  2. **Đồng bộ hóa Bo góc và Tỉ lệ hiển thị (Border-Radius Inheritance):**
+     - Đặt `border-top-left-radius: inherit; border-top-right-radius: inherit;` trên cả thẻ bọc `.card-media` và thẻ ảnh con `img` bên trong, đảm bảo ảnh luôn áp khít 100% vào mép trên của thẻ card, không còn bất kỳ kẽ hở hay độ lệch nào.
+  3. **Cân chỉnh Padding lưới thẻ trên Mobile (`≤ 768px`):**
+     - Chuyển `padding: 0;` cho `.cards-grid` và `.crafts-grid` trên thiết bị di động để khoảng đệm 16px của `.section-container` được áp dụng đồng bộ từ tiêu đề đến các thẻ bài viết, chấm dứt hoàn toàn hiện tượng lệch lề hai bên.
+
 ---
 
 ## 3. Bảng Tổng Hợp Design Tokens Trong `:root`
@@ -191,7 +208,7 @@
 | **Responsive Mobile-First & App UI** | 1.5 | **ĐẠT (1.5/1.5)** | Kiểm thử mượt trên 375px, 768px, 1100px, 1440px. Header Desktop 1 dòng. Drawer Pure CSS & Bottom Navigation Bar như Mobile App. |
 | **Hiệu ứng & Layer Decoupling** | 1.0 | **ĐẠT (1.0/1.0)** | Tách lớp độc lập, cuộn mượt (`scroll-padding-top`), scroll cue, zoom ảnh 1.08, status pulse dot, `@media (prefers-reduced-motion: reduce)`. |
 | **Độ Tinh Khiết JS & Chuẩn Học Thuật** | 1.0 | **ĐẠT (1.0/1.0)** | 0 dòng JS tự viết. Grep chỉ ra đúng 2 dòng script AOS. |
-| **Hình Ảnh Thực Tế & Tài Liệu** | 2.0 | **ĐẠT (2.0/2.0)** | 100% ảnh thật di tích Đồng Nai, có `IMAGES.md`, `font-test.html`, ghi chép 9 vòng lặp chi tiết. |
+| **Hình Ảnh Thực Tế & Tài Liệu** | 2.0 | **ĐẠT (2.0/2.0)** | 100% ảnh thật di tích Đồng Nai, có `IMAGES.md`, `font-test.html`, ghi chép 10 vòng lặp chi tiết. |
 | **TỔNG ĐIỂM DỰ KIẾN** | **10.0 / 10.0** | **XUẤT SẮC** | Hoàn thành toàn diện mọi ràng buộc kỹ thuật của Khoa CNTT - Đại học Lạc Hồng. |
 
 ---

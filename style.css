@@ -73,6 +73,14 @@
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+figure, blockquote, dl, dd, dt, ul, ol, p, h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
@@ -881,6 +889,15 @@ p {
 /* --------------------------------------------------------------------------
    7. MEDIA SYSTEM (HIỆU ỨNG ZOOM ẢNH, AUTO LAYOUT & GLASS BADGES)
    -------------------------------------------------------------------------- */
+figure,
+.card-media,
+.craft-figure,
+.about-figure {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .card-media,
 .craft-figure,
 .about-figure {
@@ -889,6 +906,10 @@ p {
   aspect-ratio: 16/10;
   overflow: hidden;
   background-color: #EAE2D8;
+  margin: 0;
+  padding: 0;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .card-media img,
@@ -896,7 +917,12 @@ p {
 .about-figure img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
@@ -1939,7 +1965,7 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0 16px;
+    padding: 0;
     width: 100%;
   }
 
@@ -1947,17 +1973,23 @@ p {
   .card-media,
   .craft-figure {
     width: 100%;
-    height: 200px;
-    aspect-ratio: auto;
-    border-radius: 12px 12px 0 0;
+    height: 220px;
+    aspect-ratio: 16/10;
+    margin: 0;
+    padding: 0;
+    display: block;
+    border-radius: 18px 18px 0 0;
   }
 
   .card-media img,
   .craft-figure img {
     width: 100%;
-    height: 200px;
+    height: 100%;
+    display: block;
     object-fit: cover;
-    border-radius: 12px 12px 0 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 18px 18px 0 0;
   }
 
   /* CHUẨN HÓA THANH BOTTOM NAVIGATION (NHƯ APP NATIVE CAO CẤP) */
