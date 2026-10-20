@@ -83,23 +83,21 @@ figure, blockquote, dl, dd, dt, ul, ol, p, h1, h2, h3, h4, h5 {
   padding: 0;
 }
 
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  -webkit-overflow-scrolling: touch;
-}
-
 html {
+  overflow-x: clip;                /* Chặn tràn ngang 100% mà TUYỆT ĐỐI KHÔNG làm đơ sự kiện cuộn window của AOS */
   scroll-behavior: smooth;
   scroll-padding-top: 84px;        /* Đảm bảo cuộn không bị che khuất tiêu đề bởi sticky header */
   font-size: 16px;
 }
 
 body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;                /* Chặn tràn ngang an toàn tuyệt đối mà không phá vỡ AOS scroll listener */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
   font-family: var(--font-body);
   background-color: var(--bg-main);
   color: var(--text-primary);
@@ -109,11 +107,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Khóa chống tràn ngang tuyệt đối cho toàn bộ section cha bọc ngoài hiệu ứng AOS */
 section {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
   position: relative;
 }
 
@@ -328,6 +324,8 @@ p {
 
 .btn-block {
   width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 
 /* --------------------------------------------------------------------------
@@ -2046,22 +2044,22 @@ figure,
     transform: scale(0.92);
   }
 
-  /* Nút cuộn lên đầu trang (Back to top) hình tròn đỏ nổi bên trên thanh Bottom Nav */
+  /* Nút cuộn lên đầu trang (Back to top) hình tròn đỏ nổi bên trên thanh Bottom Nav, không lấn át submit button */
   .back-to-top {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
+    bottom: 74px;
+    right: 14px;
     z-index: 999;
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background-color: var(--primary-color);
     color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 18px rgba(139, 38, 62, 0.45);
+    font-size: 1rem;
+    box-shadow: 0 4px 16px rgba(139, 38, 62, 0.4);
     border: 2px solid var(--secondary-color);
   }
 
@@ -2072,8 +2070,52 @@ figure,
     width: 100%;
   }
 
+  /* Tối ưu hóa giao diện Form Liên hệ & Đóng góp trên Mobile */
+  .contact-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .contact-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+    margin: 0 auto 30px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(35, 27, 21, 0.08);
+  }
+
+  .contact-form {
+    gap: 14px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px;              /* Ngăn ngừa Safari iOS tự động zoom màn hình khi focus */
+    padding: 12px 14px 12px 40px;
+  }
+
+  .form-select {
+    padding-right: 36px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .contact-form .btn-block {
+    width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+    text-align: center;
+    padding: 14px 18px;
+    min-height: 52px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 8px;
   }
 
   .nature-banner {
