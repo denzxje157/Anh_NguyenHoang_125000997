@@ -3,24 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chiều sâu Văn hóa & Di sản Đồng Nai | Khám phá Vùng đất Hào khí Phương Nam</title>
+  <title>Hào Khí Trấn Biên - Chiều Sâu Văn Hóa & Di Sản Đất Đồng Nai</title>
   
-  <!-- SEO & Meta Description -->
-  <meta name="description" content="Trang web giới thiệu chiều sâu văn hóa, di tích lịch sử và danh lam thắng cảnh Đồng Nai: Văn Miếu Trấn Biên, Chiến khu Đ, Làng gốm Biên Hòa, Vườn Quốc gia Cát Tiên.">
-  <meta name="author" content="Nguyễn Hoàng Anh - MSSV 125000997 - Đại học Lạc Hồng">
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Khám phá Chiều sâu Văn hóa & Di sản Đất Đồng Nai: Văn Miếu Trấn Biên, Chiến khu Đ, Chùa Ông Cù Lao Phố, Vườn Quốc gia Cát Tiên, Hồ Trị An, Cầu Ghềnh, Gốm Biên Hòa.">
+  <meta name="author" content="Nguyễn Hoàng Anh - MSSV: 125000997 - Khoa CNTT Đại học Lạc Hồng">
+  <meta property="og:title" content="Hào Khí Trấn Biên - Chiều Sâu Văn Hóa & Di Sản Đất Đồng Nai">
+  <meta property="og:description" content="Trang web khám phá di tích lịch sử, danh thắng và làng nghề cổ truyền đất Trấn Biên - Đồng Nai hơn 325 năm mở cõi phương Nam.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-bg.webp">
 
-  <!-- Google Fonts: Playfair Display (Heading) & Be Vietnam Pro (Body) -->
+  <!-- Favicon (SVG Data-URI biểu tượng Văn Miếu Trấn Biên) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%238B263E' d='M16 2L2 9v3h28V9L16 2zm0 4.5l8 4H8l8-4zM4 14v12h4V14H4zm7 0v12h4V14h-4zm7 0v12h4V14h-4zm7 0v12h4V14h-4zM2 28v2h28v-2H2z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: 100% Việt Hóa (Noto Serif cho Tiêu đề & Be Vietnam Pro cho Thân bài) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 CDN (Icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- Animate.css CDN (Hiệu ứng động ban đầu cho Hero/Title/CTA) -->
+  <!-- Animate.css CDN (Hiệu ứng mở đầu cho Hero, Headline, CTA) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-  <!-- AOS (Animate On Scroll) CSS CDN (Hiệu ứng cuộn trang mượt mà) -->
+  <!-- AOS (Animate On Scroll) CSS CDN -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
   <!-- Custom Stylesheet -->
@@ -28,130 +35,197 @@
 </head>
 <body>
 
-  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <!-- Skip Navigation Link (Hỗ trợ Accessibility / Phím Tab) -->
+  <a href="#main-content" class="skip-link">Bỏ qua điều hướng đến nội dung chính</a>
+
+  <!-- ==================== 1. HEADER & NAVIGATION (SEMANTIC HTML5 & PURE CSS DRAWER) ==================== -->
   <header class="site-header">
     <div class="header-container">
-      <a href="#hero" class="brand-logo" aria-label="Trang chủ Di sản Đồng Nai">
-        <span class="logo-symbol"><i class="fa-solid fa-landmark-dome"></i></span>
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Trang chủ Hào Khí Trấn Biên">
+        <span class="logo-symbol"><i class="fa-solid fa-landmark-dome" aria-hidden="true"></i></span>
         <span class="logo-text">
-          <strong class="logo-title">ĐỒNG NAI</strong>
-          <small class="logo-tagline">Hào Khí & Di Sản</small>
+          <strong class="logo-title">HÀO KHÍ TRẤN&nbsp;BIÊN</strong>
+          <small class="logo-tagline">Văn Hóa &amp; Di Sản Đồng&nbsp;Nai</small>
         </span>
       </a>
 
-      <nav class="site-nav" aria-label="Điều hướng chính">
+      <!-- Nút Hamburger Menu Mobile (CSS :target thuần túy, không dùng JavaScript) -->
+      <a href="#site-menu" class="menu-open" aria-label="Mở menu điều hướng">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </a>
+
+      <!-- Thanh Điều Hướng (Off-canvas Drawer trên mobile, Row tĩnh trên desktop) -->
+      <nav class="site-nav" id="site-menu" aria-label="Thanh điều hướng chính">
+        <div class="drawer-header">
+          <span class="drawer-title"><i class="fa-solid fa-compass" aria-hidden="true"></i> Menu Di Sản</span>
+          <a href="#hero" class="menu-close" aria-label="Đóng menu điều hướng">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </a>
+        </div>
         <ul class="nav-list">
-          <li class="nav-item"><a href="#hero" class="nav-link active">Trang chủ</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">Giới thiệu</a></li>
-          <li class="nav-item"><a href="#heritage" class="nav-link">Di tích Lịch sử</a></li>
-          <li class="nav-item"><a href="#crafts" class="nav-link">Làng nghề & Lễ hội</a></li>
-          <li class="nav-item"><a href="#nature" class="nav-link">Kỳ quan Cát Tiên</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Góp ý & Đăng ký</a></li>
+          <li class="nav-item">
+            <a href="#hero" class="nav-link active">
+              <i class="fa-solid fa-house nav-icon" aria-hidden="true"></i>
+              <span>Trang chủ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">
+              <i class="fa-solid fa-feather-pointed nav-icon" aria-hidden="true"></i>
+              <span>Lịch sử</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#heritage" class="nav-link">
+              <i class="fa-solid fa-landmark nav-icon" aria-hidden="true"></i>
+              <span>Di tích</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#crafts" class="nav-link">
+              <i class="fa-solid fa-palette nav-icon" aria-hidden="true"></i>
+              <span>Làng nghề</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#nature" class="nav-link">
+              <i class="fa-solid fa-tree nav-icon" aria-hidden="true"></i>
+              <span>Cát&nbsp;Tiên</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">
+              <i class="fa-solid fa-envelope-open-text nav-icon" aria-hidden="true"></i>
+              <span>Góp ý</span>
+            </a>
+          </li>
         </ul>
+        <a href="#heritage" class="btn btn-primary drawer-cta">
+          <i class="fa-solid fa-compass" aria-hidden="true"></i> Khám phá ngay
+        </a>
       </nav>
 
-      <a href="#heritage" class="btn btn-primary nav-cta animate__animated animate__pulse animate__infinite">
-        <i class="fa-solid fa-compass"></i> Khám phá ngay
+      <!-- Lớp phủ Backdrop che mờ màn hình khi mở Drawer trên Mobile -->
+      <a href="#hero" class="menu-backdrop" aria-label="Đóng menu bằng cách bấm ra ngoài"></a>
+
+      <!-- Nút CTA Header Desktop (Hiện trên màn hình >= 1100px) -->
+      <a href="#heritage" class="btn btn-primary nav-cta animate__animated animate__fadeInRight">
+        <i class="fa-solid fa-compass" aria-hidden="true"></i> Khám Phá
       </a>
+
     </div>
   </header>
 
-  <!-- ==================== MAIN CONTENT ==================== -->
+  <!-- ==================== 2. MAIN CONTENT ==================== -->
   <main id="main-content">
 
-    <!-- 1. HERO SECTION -->
-    <section id="hero" class="hero-section" aria-label="Phần giới thiệu đầu trang">
-      <div class="hero-overlay"></div>
+    <!-- HERO SECTION (Ảnh thật sông Đồng Nai, Heritage Gradient & Scroll Cue) -->
+    <section id="hero" class="hero-section" aria-label="Phần giới thiệu hào khí đầu trang">
       <div class="hero-content">
         <p class="hero-badge animate__animated animate__fadeInDown">
-          <i class="fa-solid fa-monument"></i> Hơn 325 Năm Hình Thành & Phát Triển
+          <i class="fa-solid fa-monument" aria-hidden="true"></i> Hơn 325&nbsp;Năm Lịch Sử Mở Cõi Phương Nam (1698&nbsp;–&nbsp;2026)
         </p>
-        <h1 class="hero-title animate__animated animate__fadeInDown">
-          Chiều Sâu Văn Hóa & <span class="highlight-text">Di Sản Đồng Nai</span>
+        <h1 class="hero-title animate__animated animate__fadeInDown hero-delay-1">
+          Hào Khí Trấn&nbsp;Biên – <span class="highlight-text">Chiều Sâu Văn Hóa</span> &amp; Di Sản Đất Đồng&nbsp;Nai
         </h1>
-        <p class="hero-subtitle animate__animated animate__fadeInUp">
-          Từ Văn Miếu Trấn Biên soi rọi hồn đạo học phương Nam, Làng gốm Biên Hòa 300 năm vang bóng, 
-          đến Vườn Quốc gia Cát Tiên - viên ngọc sinh quyển thế giới được UNESCO vinh danh.
+        <p class="hero-subtitle animate__animated animate__fadeInUp hero-delay-2">
+          Từ Văn Miếu Trấn&nbsp;Biên soi rọi đạo học phương Nam, Căn cứ Chiến khu&nbsp;Đ kiên trung bất khuất,
+          đến di sản gốm men xanh trổ hoa kim 300&nbsp;năm và Khu Dự trữ Sinh quyển Thế giới Vườn Quốc gia Cát&nbsp;Tiên UNESCO.
         </p>
         
-        <div class="hero-actions animate__animated animate__fadeInUp">
+        <div class="hero-actions animate__animated animate__fadeInUp hero-delay-3">
           <a href="#heritage" class="btn btn-primary btn-lg">
-            <i class="fa-solid fa-scroll"></i> Xem Tuyến Di Sản
+            <i class="fa-solid fa-scroll" aria-hidden="true"></i> Chiêm Ngưỡng Tuyến Di Sản
           </a>
           <a href="#about" class="btn btn-outline btn-lg">
-            <i class="fa-solid fa-circle-play"></i> Tìm Hiểu Lịch Sử
+            <i class="fa-solid fa-circle-play" aria-hidden="true"></i> Dấu Ấn Lịch Sử 1698
           </a>
         </div>
 
-        <!-- Quick Stats List -->
-        <ul class="hero-stats animate__animated animate__fadeInUp">
+        <!-- Quick Stats List (Glassmorphism & Auto Layout) -->
+        <ul class="hero-stats animate__animated animate__fadeInUp hero-delay-4">
           <li class="stat-item">
             <strong class="stat-number">325+</strong>
-            <span class="stat-label">Năm Trấn Biên - Đồng Nai</span>
+            <span class="stat-label">Năm Vùng Đất Trấn&nbsp;Biên</span>
           </li>
           <li class="stat-item">
             <strong class="stat-number">65+</strong>
-            <span class="stat-label">Di tích Lịch sử Cấp Quốc gia</span>
+            <span class="stat-label">Di Tích Lịch Sử Quốc Gia</span>
           </li>
           <li class="stat-item">
             <strong class="stat-number">01</strong>
-            <span class="stat-label">Khu Dự trữ Sinh quyển UNESCO</span>
+            <span class="stat-label">Khu Dự Trữ Sinh Quyển UNESCO</span>
           </li>
         </ul>
+
+        <!-- Nút chỉ dẫn cuộn trang tương tác kích thích lướt tiếp (Scroll-down Cue) -->
+        <a href="#about" class="hero-scroll-cue animate__animated animate__fadeInUp hero-delay-4" aria-label="Cuộn xuống khám phá tiếp">
+          <span class="scroll-cue-text">Khám phá cội nguồn</span>
+          <span class="scroll-mouse" aria-hidden="true">
+            <span class="scroll-wheel"></span>
+          </span>
+          <i class="fa-solid fa-chevron-down scroll-arrow" aria-hidden="true"></i>
+        </a>
       </div>
     </section>
 
-    <!-- 2. ABOUT SECTION -->
-    <section id="about" class="about-section" data-aos="fade-up">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section" aria-labelledby="about-title">
       <div class="section-container">
-        <header class="section-header">
-          <span class="section-badge"><i class="fa-solid fa-feather-pointed"></i> Đôi Nét Đất Phương Nam</span>
-          <h2 class="section-title">Vùng Đất Địa Linh Nhân Kiệt Bên Dòng Sông Đồng Nai</h2>
+        <header class="section-header" data-aos="fade-up">
+          <span class="section-badge"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Hồn Thiêng Đất Phương Nam</span>
+          <h2 id="about-title" class="section-title">Khởi Nguồn Vùng Đất Địa Linh Nhân Kiệt Bên Sông Đồng&nbsp;Nai</h2>
           <p class="section-desc">
-            Năm Mậu Dần 1698, Kinh lược sứ Lễ Thành hầu Nguyễn Hữu Cảnh vào kinh lý, khai sinh phủ Gia Định với hai huyện 
-            Phước Long (xứ Đồng Nai) và Tân Bình (xứ Sài Gòn). Đây là cột mốc vàng son mở cõi phương Nam.
+            Năm Mậu Dần 1698, Thống suất Lễ Thành hầu Nguyễn&nbsp;Hữu&nbsp;Cảnh vâng lệnh Chúa Nguyễn kinh lý phương Nam, 
+            thiết lập phủ Gia Định với hai huyện Phước Long (xứ Đồng&nbsp;Nai) và Tân Bình (xứ Sài Gòn), đặt nền móng vững bền cho cõi biên cương.
           </p>
         </header>
 
         <div class="about-grid">
-          <article class="about-article">
-            <h3 class="article-title"><i class="fa-solid fa-book-open-reader"></i> Nôi Giáo Dục & Văn Khí Phương Nam</h3>
+          <article class="about-article" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="article-title"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i> Nôi Giáo Dục &amp; Văn Hiến Đầu Tiên Ở Đàng Trong</h3>
             <p>
-              Đồng Nai tự hào sở hữu <strong>Văn Miếu Trấn Biên</strong> (xây dựng năm 1715) – biểu tượng của truyền thống hiếu học, 
-              tôn sư trọng đạo và là Văn Miếu đầu tiên được lập nên ở Đàng Trong, phụng thờ các bậc tiên hiền của dân tộc.
+              Đồng&nbsp;Nai tự hào là vùng đất dung nạp văn khí hào sảng của các bậc tiền nhân. <strong>Văn Miếu Trấn&nbsp;Biên</strong> khởi dựng năm 1715, 
+              chính là biểu tượng tỏa rạng tinh thần hiếu học, phụng thờ Khổng Tử cùng các bậc hiền triết đại diện cho trí tuệ và khí phách dân tộc Việt.
             </p>
             <p>
-              Bên cạnh đó, con người xứ Đồng Nai bao đời nay luôn dung dưỡng tinh thần kiên trung bất khuất, hào sảng, 
-              nhân ái và gắn kết nghĩa tình của các dân tộc anh em Kinh, Chơro, Mạ, Stiêng, Hoa...
+              Bên cạnh chiều sâu Nho học, xứ Đồng&nbsp;Nai còn ghi dấu lòng quả cảm quật cường với Căn cứ Chiến khu&nbsp;Đ lẫy lừng, 
+              sự giao thoa văn hóa đặc sắc của các dân tộc anh em Kinh, Hoa, Chơro, Mạ, Stiêng cùng chung tay bồi đắp dải đất phù sa trù phú.
             </p>
             
             <ul class="about-highlights">
-              <li><i class="fa-solid fa-circle-check"></i> Trấn Biên Văn Miếu – Điểm son truyền thống hiếu học</li>
-              <li><i class="fa-solid fa-circle-check"></i> Địa đạo Căn cứ Chiến khu Đ anh dũng kiên cường</li>
-              <li><i class="fa-solid fa-circle-check"></i> Văn hóa sông nước hài hòa cùng thiên nhiên đại ngàn</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Trấn&nbsp;Biên Văn Miếu – Biểu tượng văn hiến số 1 phương Nam</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Chiến khu&nbsp;Đ &amp; Địa đạo Suối Linh – Căn cứ địa cách mạng anh hùng</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cù lao Phố &amp; Nông Nại Đại Phố – Trung tâm thương cảng sầm uất thế kỷ XVII</li>
             </ul>
           </article>
 
-          <figure class="about-figure">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" 
-                 alt="Khung cảnh công trình cổ kính uy nghiêm hài hòa thiên nhiên" 
+          <figure class="about-figure" data-aos="fade-up" data-aos-delay="200">
+            <!-- Ảnh tư liệu thực tế: Dòng sông Đồng Nai thuở khẩn hoang phương Nam -->
+            <img src="assets/images/hinh-2.webp" 
+                 alt="Tư liệu lịch sử: Dòng sông Đồng Nai và vùng đất Trấn Biên thuở khẩn hoang mở cõi phương Nam" 
+                 width="800" 
+                 height="500" 
                  loading="lazy">
             <figcaption class="about-caption">
-              <i class="fa-solid fa-quote-left"></i> "Đồng Nai gạo trắng nước trong - Người đi đến đó lòng không muốn về"
+              <blockquote>"Nhà Bè nước chảy chia hai<br>Ai về Gia Định, Đồng&nbsp;Nai thì về"</blockquote>
+              <cite>— Ca dao phương Nam</cite>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- 3. HERITAGE SITES SECTION -->
-    <section id="heritage" class="heritage-section" data-aos="fade-up">
+    <!-- HERITAGE SITES SECTION (GRID WITH LAYER DECOUPLING & AUTO LAYOUT) -->
+    <section id="heritage" class="heritage-section" aria-labelledby="heritage-title">
       <div class="section-container">
-        <header class="section-header text-center">
-          <span class="section-badge"><i class="fa-solid fa-archway"></i> Di Tích Lịch Sử Trọng Điểm</span>
-          <h2 class="section-title">Những Di Sản Khắc Ghi Bản Sắc Trấn Biên</h2>
+        <header class="section-header text-center" data-aos="fade-up">
+          <span class="section-badge"><i class="fa-solid fa-archway" aria-hidden="true"></i> Di Tích Lịch Sử &amp; Thắng Cảnh</span>
+          <h2 id="heritage-title" class="section-title">Những Địa Danh Khắc Ghi Bản Sắc Hào Khí</h2>
           <p class="section-desc">
-            Hành trình qua các dấu mốc lịch sử nghìn năm văn hiến, nơi hồn thiêng sông núi kết tinh trong từng thớ gạch, trang sách và ngọn cây.
+            Chiêm ngưỡng các công trình lịch sử, văn hóa tâm linh và danh thắng biểu trưng của thành phố Biên Hòa cùng tỉnh Đồng&nbsp;Nai.
           </p>
         </header>
 
@@ -159,83 +233,185 @@
           
           <!-- Card 1: Văn Miếu Trấn Biên -->
           <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
-            <article class="heritage-card">
+            <article class="heritage-card" id="di-tich-tran-bien">
               <figure class="card-media">
-                <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=700&q=80" 
-                     alt="Khuôn viên Văn Miếu Trấn Biên rợp bóng cổ thụ hồ Long Ẩn" 
+                <img src="assets/images/anh_van_mieu.jpg" 
+                     alt="Toàn cảnh khuôn viên rợp bóng cây cổ thụ của Văn Miếu Trấn Biên nhìn từ trên cao" 
+                     width="800" 
+                     height="500" 
                      loading="lazy">
-                <figcaption class="card-category"><i class="fa-solid fa-award"></i> Di Tích Quốc Gia</figcaption>
+                <span class="card-category">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-award" aria-hidden="true"></i> Di Tích Quốc Gia
+                </span>
               </figure>
               <div class="card-body">
                 <header class="card-header">
-                  <span class="card-meta"><i class="fa-regular fa-calendar"></i> Khởi dựng: 1715</span>
-                  <h3 class="card-title">Văn Miếu Trấn Biên</h3>
+                  <span class="card-meta"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Khởi dựng: <time datetime="1715">1715</time></span>
+                  <h3 class="card-title">Văn Miếu Trấn&nbsp;Biên</h3>
                 </header>
                 <p class="card-desc">
-                  Biểu tượng văn hiến hàng đầu phương Nam, tọa lạc tại phường Bửu Long, thành phố Biên Hòa. Nơi tôn vinh đức Khổng Tử 
-                  cùng các danh nhân văn hóa Việt Nam: Chu Văn An, Nguyễn Trãi, Lê Quý Đôn, Nguyễn Hữu Cảnh...
+                  Biểu tượng văn hóa giáo dục Đàng Trong, tọa lạc tại phường Bửu Long, TP. Biên Hòa. Nơi tôn vinh các danh nhân lịch sử 
+                  văn hóa kiệt xuất: Chu Văn An, Nguyễn Trãi, Lê Quý Đôn, Võ Trường Toản, Nguyễn&nbsp;Hữu&nbsp;Cảnh...
                 </p>
                 <footer class="card-footer">
-                  <span class="card-location"><i class="fa-solid fa-location-dot"></i> TP. Biên Hòa, Đồng Nai</span>
-                  <a href="#about" class="card-btn" aria-label="Chi tiết Văn Miếu Trấn Biên">
-                    Chi tiết <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+                  <span class="card-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> P. Bửu Long, TP. Biên Hòa</span>
+                  <span class="card-explore-tag"><i class="fa-solid fa-compass" aria-hidden="true"></i> Điểm Đến Di Sản</span>
                 </footer>
               </div>
             </article>
           </div>
 
-          <!-- Card 2: Chiến khu Đ -->
+          <!-- Card 2: Chùa Ông (Thất Phủ Cổ Miếu) -->
           <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
-            <article class="heritage-card">
+            <article class="heritage-card" id="di-tich-chua-ong">
               <figure class="card-media">
-                <img src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=700&q=80" 
-                     alt="Rừng đại ngàn Chiến khu Đ trầm mặc kiên cường" 
+                <img src="assets/images/anh_chanh_dien_cu_lao_pho.jpg" 
+                     alt="Chánh điện Thất Phủ Cổ Miếu (Chùa Ông Cù Lao Phố) lung linh trong ánh đèn hoa đăng đêm hội" 
+                     width="800" 
+                     height="500" 
                      loading="lazy">
-                <figcaption class="card-category"><i class="fa-solid fa-shield-halved"></i> Di Tích Lịch Sử</figcaption>
+                <span class="card-category">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-place-of-worship" aria-hidden="true"></i> Di Tích Nghệ Thuật
+                </span>
               </figure>
               <div class="card-body">
                 <header class="card-header">
-                  <span class="card-meta"><i class="fa-regular fa-calendar"></i> Thành lập: 1946</span>
-                  <h3 class="card-title">Căn Cứ Chiến Khu Đ</h3>
+                  <span class="card-meta"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Khởi dựng: <time datetime="1684">1684</time></span>
+                  <h3 class="card-title">Chùa Ông (Thất Phủ Cổ Miếu)</h3>
                 </header>
                 <p class="card-desc">
-                  "Chiến khu Đ đi dễ khó về" - vùng đất căn cứ kháng chiến kiên cường qua hai cuộc kháng chiến vĩ đại. 
-                  Nơi ghi dấu Trung ương Cục miền Nam, địa đạo Suối Linh và lòng quả cảm son sắt của quân dân miền Đông gian lao mà anh dũng.
+                  Ngôi miếu cổ bậc nhất Nam Bộ tọa lạc tại xã Hiệp Hòa (Cù lao Phố), minh chứng sống động cho thời kỳ thương cảng Nông Nại Đại Phố. 
+                  Lễ hội Chùa Ông là Di sản Văn hóa Phi vật thể Quốc gia hội tụ hàng vạn khách thập phương.
                 </p>
                 <footer class="card-footer">
-                  <span class="card-location"><i class="fa-solid fa-location-dot"></i> Huyện Vĩnh Cửu, Đồng Nai</span>
-                  <a href="#about" class="card-btn" aria-label="Chi tiết Căn Cứ Chiến Khu Đ">
-                    Chi tiết <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+                  <span class="card-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cù lao Phố, TP. Biên Hòa</span>
+                  <span class="card-explore-tag"><i class="fa-solid fa-compass" aria-hidden="true"></i> Cổ Miếu Trăm Năm</span>
                 </footer>
               </div>
             </article>
           </div>
 
-          <!-- Card 3: Danh thắng Bửu Long -->
+          <!-- Card 3: Căn cứ Chiến khu Đ -->
           <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
-            <article class="heritage-card">
+            <article class="heritage-card" id="di-tich-chien-khu-d">
               <figure class="card-media">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" 
-                     alt="Hồ nước xanh biếc và vách đá kỳ vĩ tại Bửu Long" 
+                <img src="assets/images/chien-khu-d-1000x672.jpg" 
+                     alt="Khu lán trại lợp lá trung quân - biểu tượng căn cứ kháng chiến kiên trung Chiến khu Đ" 
+                     width="800" 
+                     height="500" 
                      loading="lazy">
-                <figcaption class="card-category"><i class="fa-solid fa-mountain-sun"></i> Thắng Cảnh Quốc Gia</figcaption>
+                <span class="card-category">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Di Tích Lịch Sử
+                </span>
               </figure>
               <div class="card-body">
                 <header class="card-header">
-                  <span class="card-meta"><i class="fa-regular fa-calendar"></i> Công nhận: 1990</span>
+                  <span class="card-meta"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Thành lập: <time datetime="1946">1946</time></span>
+                  <h3 class="card-title">Căn Cứ Chiến Khu&nbsp;Đ</h3>
+                </header>
+                <p class="card-desc">
+                  "Chiến khu&nbsp;Đ đi dễ khó về" – mảnh đất anh hùng miền Đông gian lao mà anh dũng. 
+                  Nơi ghi dấu Trung ương Cục miền Nam, địa đạo Suối Linh và lòng quả cảm son sắt của đồng bào, chiến sĩ qua hai cuộc kháng chiến trường kỳ.
+                </p>
+                <footer class="card-footer">
+                  <span class="card-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Huyện Vĩnh Cửu, Đồng&nbsp;Nai</span>
+                  <span class="card-explore-tag"><i class="fa-solid fa-compass" aria-hidden="true"></i> Căn Cứ Kháng Chiến</span>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: Danh thắng Bửu Long & Hồ Long Ẩn -->
+          <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <article class="heritage-card" id="di-tich-buu-long">
+              <figure class="card-media">
+                <img src="assets/images/Danh-thang-Buu-Long-01.jpg" 
+                     alt="Vách đá kỳ vĩ và mặt hồ Long Ẩn phẳng lặng trong vắt tại danh thắng Bửu Long" 
+                     width="800" 
+                     height="500" 
+                     loading="lazy">
+                <span class="card-category">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Thắng Cảnh Quốc Gia
+                </span>
+              </figure>
+              <div class="card-body">
+                <header class="card-header">
+                  <span class="card-meta"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Xếp hạng: <time datetime="1990">1990</time></span>
                   <h3 class="card-title">Khu Danh Thắng Bửu Long</h3>
                 </header>
                 <p class="card-desc">
-                  Được mệnh danh là "Vịnh Hạ Long thu nhỏ của phương Nam", nơi hội tụ hồ Long Ẩn trong xanh, vách đá dựng đứng 
-                  cùng ngôi chùa cổ Bửu Phong Tự tọa lạc trên đỉnh núi linh thiêng hơn 300 năm tuổi.
+                  Được xưng tụng là "Vịnh Hạ Long trên cạn của phương Nam", nơi hội tụ hồ Long Ẩn trong vắt, vách đá dựng đứng kỳ vĩ 
+                  cùng ngôi chùa cổ Bửu Phong Tự trên đỉnh núi Long Ẩn uy nghiêm hơn ba thế kỷ.
                 </p>
                 <footer class="card-footer">
-                  <span class="card-location"><i class="fa-solid fa-location-dot"></i> Phường Bửu Long, TP. Biên Hòa</span>
-                  <a href="#about" class="card-btn" aria-label="Chi tiết Danh Thắng Bửu Long">
-                    Chi tiết <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+                  <span class="card-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> P. Bửu Long, TP. Biên Hòa</span>
+                  <span class="card-explore-tag"><i class="fa-solid fa-compass" aria-hidden="true"></i> Danh Thắng Trấn Biên</span>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 5: Cầu Ghềnh Lịch Sử -->
+          <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <article class="heritage-card" id="di-tich-cau-ghenh">
+              <figure class="card-media">
+                <img src="assets/images/Ky-uc-cau-Ghenh-cay-cau-112-tuoi-ivivu-1.jpg" 
+                     alt="Ký ức cầu Ghềnh 112 tuổi với dàn vòm thép vắt ngang qua dòng sông Đồng Nai hiền hòa" 
+                     width="800" 
+                     height="500" 
+                     loading="lazy">
+                <span class="card-category">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-bridge" aria-hidden="true"></i> Di Tích Giao Thông
+                </span>
+              </figure>
+              <div class="card-body">
+                <header class="card-header">
+                  <span class="card-meta"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Khánh thành: <time datetime="1904">1904</time></span>
+                  <h3 class="card-title">Cầu Ghềnh (Cầu Đồng&nbsp;Nai Lớn)</h3>
+                </header>
+                <p class="card-desc">
+                  Công trình cầu đường sắt thép do công ty Pháp xây dựng đầu thế kỷ XX, vắt qua dòng sông Đồng&nbsp;Nai hiền hòa. 
+                  Biểu tượng trăm năm gắn liền với ký ức bao thế hệ người dân xứ Bưởi Biên Hòa.
+                </p>
+                <footer class="card-footer">
+                  <span class="card-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cù lao Phố, TP. Biên Hòa</span>
+                  <span class="card-explore-tag"><i class="fa-solid fa-compass" aria-hidden="true"></i> Ký Ức Trăm Năm</span>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 6: Hồ Trị An & Rừng Mã Đà -->
+          <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+            <article class="heritage-card" id="di-tich-tri-an">
+              <figure class="card-media">
+                <img src="assets/images/go-and-share-hoang-hon-ho-tri-an-7.webp" 
+                     alt="Khung cảnh hoàng hôn tráng lệ soi bóng trên mặt hồ thủy điện Trị An mênh mông" 
+                     width="800" 
+                     height="500" 
+                     loading="lazy">
+                <span class="card-category">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-water" aria-hidden="true"></i> Thắng Cảnh Sinh Thái
+                </span>
+              </figure>
+              <div class="card-body">
+                <header class="card-header">
+                  <span class="card-meta"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Vận hành: <time datetime="1989">1989</time></span>
+                  <h3 class="card-title">Hồ Trị&nbsp;An &amp; Rừng Mã Đà</h3>
+                </header>
+                <p class="card-desc">
+                  Hồ thủy điện nhân tạo lớn nhất miền Nam với diện tích mặt nước 323 km², hòa cùng rừng Mã Đà đại ngàn. 
+                  Nơi du khách cắm trại đón bình minh thơ mộng và thưởng thức đặc sản cá kìm, cá lăng sông Đồng&nbsp;Nai.
+                </p>
+                <footer class="card-footer">
+                  <span class="card-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Huyện Vĩnh Cửu, Đồng&nbsp;Nai</span>
+                  <span class="card-explore-tag"><i class="fa-solid fa-compass" aria-hidden="true"></i> Sinh Thái Sông Nước</span>
                 </footer>
               </div>
             </article>
@@ -245,118 +421,143 @@
       </div>
     </section>
 
-    <!-- 4. CRAFTS & FESTIVALS SECTION -->
-    <section id="crafts" class="crafts-section" data-aos="fade-up">
+    <!-- CRAFTS & FESTIVALS SECTION -->
+    <section id="crafts" class="crafts-section" aria-labelledby="crafts-title">
       <div class="section-container">
-        <header class="section-header">
-          <span class="section-badge"><i class="fa-solid fa-fire-burner"></i> Tinh Hoa Nghề Cổ & Lễ Hội</span>
-          <h2 class="section-title">Hồn Nghề Truyền Thống & Bản Sắc Dân Tộc</h2>
+        <header class="section-header" data-aos="fade-up">
+          <span class="section-badge"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i> Tinh Hoa Nghề Cổ &amp; Lễ Hội</span>
+          <h2 id="crafts-title" class="section-title">Hồn Nghề Đất Gốm &amp; Tiếng Cồng Chiêng Đại Ngàn</h2>
           <p class="section-desc">
-            Sự giao thoa diệu kỳ giữa nghệ thuật gốm men xanh trứ danh, điệu cồng chiêng Chơro và các lễ hội dân gian độc đáo.
+            Sự kết tinh kỳ diệu giữa bàn tay tài hoa của nghệ nhân gốm Tân Vạn, điệu cồng chiêng Chơro và lễ hội dân gian linh thiêng.
           </p>
         </header>
 
         <div class="crafts-grid">
-          <!-- Article: Làng Gốm Biên Hòa -->
-          <article class="craft-card" data-aos="fade-right">
-            <figure class="craft-figure">
-              <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=80" 
-                   alt="Bàn tay nghệ nhân vuốt gốm thủ công tỉ mỉ" 
-                   loading="lazy">
-              <figcaption class="craft-overlay-tag"><i class="fa-solid fa-palette"></i> Di Sản Thủ Công 300 Năm</figcaption>
-            </figure>
-            <div class="craft-content">
-              <h3 class="craft-title">Gốm Biên Hòa – Men Xanh Đồng Trổ Hoa Kim</h3>
-              <p>
-                Trường Mỹ nghệ Thực hành Biên Hòa (thành lập 1903) đã đưa gốm Biên Hòa vươn tầm quốc tế với nước men tro rơm, 
-                đất sét cao lanh và sắc men đồng trổ hoa xanh trứ danh. Mỗi tác phẩm là kết tinh của đất, lửa và tâm hồn nghệ nhân tài hoa.
-              </p>
-              <ul class="craft-features">
-                <li><i class="fa-solid fa-star"></i> Kỹ thuật khắc chìm phối men đa sắc độc nhất vô nhị</li>
-                <li><i class="fa-solid fa-star"></i> Từng đoạt huy chương vàng triển lãm quốc tế Paris 1925</li>
-              </ul>
-              <a href="#contact" class="btn btn-outline btn-sm">Tìm hiểu xưởng gốm Tân Vạn</a>
-            </div>
-          </article>
+          <!-- Wrapper 1: Làng Gốm Biên Hòa -->
+          <div class="craft-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <article class="craft-card">
+              <figure class="craft-figure">
+                <img src="assets/images/lang-gom-Bien-Hoa-9.jpg" 
+                     alt="Sản phẩm gốm men màu trổ hoa kim truyền thống của làng gốm Biên Hòa" 
+                     width="800" 
+                     height="500" 
+                     loading="lazy">
+                <span class="craft-overlay-tag">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-palette" aria-hidden="true"></i> Di Sản Thủ Công 300 Năm
+                </span>
+              </figure>
+              <div class="craft-content">
+                <h3 class="craft-title">Gốm Biên Hòa – Men Xanh Đồng Trổ Hoa Kim</h3>
+                <p>
+                  Trường Mỹ nghệ Thực hành Biên Hòa (thành lập 1903) đã đưa gốm Biên Hòa vươn tầm thế giới với nước men tro rơm, 
+                  đất sét cao lanh và sắc men đồng trổ hoa xanh ngọc danh tiếng, từng giành Huy chương Vàng tại Hội chợ Quốc tế Paris 1925.
+                </p>
+                <ul class="craft-features">
+                  <li><i class="fa-solid fa-star" aria-hidden="true"></i> Kỹ thuật khắc chìm phối men màu bí truyền đa sắc</li>
+                  <li><i class="fa-solid fa-star" aria-hidden="true"></i> Các lò gốm cổ Tân Vạn trải dọc bờ sông Đồng&nbsp;Nai thơ mộng</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-sm">Nhận Tư Liệu Gốm Tân Vạn</a>
+              </div>
+            </article>
+          </div>
 
-          <!-- Article: Lễ hội Văn Hóa & Cồng Chiêng -->
-          <article class="craft-card" data-aos="fade-left">
-            <figure class="craft-figure">
-              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=700&q=80" 
-                   alt="Không khí lễ hội truyền thống rực rỡ sắc màu" 
-                   loading="lazy">
-              <figcaption class="craft-overlay-tag"><i class="fa-solid fa-drum"></i> Lễ Hội Văn Hóa Phi Vật Thể</figcaption>
-            </figure>
-            <div class="craft-content">
-              <h3 class="craft-title">Lễ Hội Chùa Ông & Tiếng Cồng Chiêng Chơro</h3>
-              <p>
-                Đồng Nai là nơi giao lưu của 50 dân tộc anh em. Lễ hội Chùa Ông (Thất Phủ Cổ Miếu) được công nhận là Di sản văn hóa phi vật thể 
-                quốc gia, cùng với lễ Sayangva mừng lúa mới và tiếng cồng chiêng bập bùng đêm lửa trại của đồng bào Chơro, Mạ.
-              </p>
-              <ul class="craft-features">
-                <li><i class="fa-solid fa-star"></i> Lễ hội Nghinh Thần tưng bừng trên dòng sông Phố</li>
-                <li><i class="fa-solid fa-star"></i> Không gian diễn xướng cồng chiêng Chơro huyền ảo</li>
-              </ul>
-              <a href="#contact" class="btn btn-outline btn-sm">Xem lịch sự kiện trong năm</a>
-            </div>
-          </article>
+          <!-- Wrapper 2: Lễ hội & Văn Hóa Cồng Chiêng -->
+          <div class="craft-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <article class="craft-card">
+              <figure class="craft-figure">
+                <img src="assets/images/thuyen-ruoc.webp" 
+                     alt="Đoàn thuyền rước Nghinh Thần rực rỡ cờ hoa trên sông Đồng Nai trong ngày hội Chùa Ông" 
+                     width="800" 
+                     height="500" 
+                     loading="lazy">
+                <span class="craft-overlay-tag">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <i class="fa-solid fa-drum" aria-hidden="true"></i> Di Sản Phi Vật Thể Quốc Gia
+                </span>
+              </figure>
+              <div class="craft-content">
+                <h3 class="craft-title">Lễ Hội Nghinh Thần &amp; Cồng Chiêng Dân Tộc Chơro</h3>
+                <p>
+                  Đồng&nbsp;Nai là nơi hội tụ văn hóa đặc sắc. Lễ hội Chùa Ông với nghi thức Nghinh Thần trên sông rực rỡ sắc màu, 
+                  hòa cùng tiếng cồng chiêng huyền ảo bên bếp lửa mừng lúa mới (Sayangva) của đồng bào Chơro, Mạ dưới chân rừng Cát&nbsp;Tiên.
+                </p>
+                <ul class="craft-features">
+                  <li><i class="fa-solid fa-star" aria-hidden="true"></i> Lễ hội Chùa Ông được công nhận Di sản phi vật thể quốc gia</li>
+                  <li><i class="fa-solid fa-star" aria-hidden="true"></i> Không gian diễn xướng cồng chiêng Chơro độc đáo</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-sm">Đăng Ký Nhận Lịch Lễ Hội</a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. NATURE: VƯỜN QUỐC GIA CÁT TIÊN -->
-    <section id="nature" class="nature-section" data-aos="zoom-in-up">
+    <!-- NATURE: VƯỜN QUỐC GIA CÁT TIÊN (UNESCO) (Ảnh thật rừng Cát Tiên & Forest Overlay) -->
+    <section id="nature" class="nature-section" aria-labelledby="nature-title">
       <div class="section-container">
-        <div class="nature-banner">
+        <div class="nature-banner" data-aos="zoom-in-up">
           <div class="nature-text-box">
-            <span class="nature-badge"><i class="fa-solid fa-leaf"></i> Di Sản Thiên Nhiên UNESCO</span>
-            <h2 class="nature-title">Vườn Quốc Gia Cát Tiên</h2>
+            <span class="nature-badge"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Khu Dự Trữ Sinh Quyển UNESCO &amp; Khu Ramsar Bàu Sấu</span>
+            <h2 id="nature-title" class="nature-title">Vườn Quốc Gia Cát&nbsp;Tiên</h2>
             <p class="nature-lead">
-              Khu dự trữ sinh quyển thế giới với diện tích hơn 71.000 ha rừng nguyên sinh rậm rạp, 
-              ngôi nhà trú ngụ của hàng ngàn loài động thực vật quý hiếm như cá sấu nước ngọt Bàu Sấu, bò tót, chim công, và cây tung cổ thụ nghìn năm tuổi.
+              Khu dự trữ sinh quyển thế giới trải rộng trên 71.000 ha rừng mưa nhiệt đới nguyên sinh. 
+              Ngôi nhà sinh sống an toàn của đàn bò tót, cá sấu nước ngọt Bàu Sấu (vùng đất ngập nước Ramsar), chim công ngũ sắc và cụ cây Tung đại thụ hơn 400 năm tuổi.
             </p>
-            <div class="nature-meta-group">
+            
+            <!-- Danh sách số liệu ngữ nghĩa chuẩn bằng thẻ <dl> -->
+            <dl class="nature-meta-group">
               <div class="nature-meta-item">
-                <i class="fa-solid fa-tree"></i>
+                <i class="fa-solid fa-tree" aria-hidden="true"></i>
                 <div>
-                  <strong>71.187 ha</strong>
-                  <p>Diện tích rừng nhiệt đới</p>
+                  <dd class="nature-stat-value">71.187 ha</dd>
+                  <dt class="nature-stat-title">Diện tích rừng nhiệt đới</dt>
                 </div>
               </div>
               <div class="nature-meta-item">
-                <i class="fa-solid fa-dove"></i>
+                <i class="fa-solid fa-dove" aria-hidden="true"></i>
                 <div>
-                  <strong>1.700+</strong>
-                  <p>Loài thực vật & chim quý</p>
+                  <dd class="nature-stat-value">1.700+</dd>
+                  <dt class="nature-stat-title">Loài thực vật &amp; chim quý</dt>
                 </div>
               </div>
-            </div>
+              <div class="nature-meta-item">
+                <i class="fa-solid fa-water" aria-hidden="true"></i>
+                <div>
+                  <dd class="nature-stat-value">Bàu Sấu</dd>
+                  <dt class="nature-stat-title">Khu Ramsar Quốc Tế 2005</dt>
+                </div>
+              </div>
+            </dl>
+
             <a href="#contact" class="btn btn-primary btn-lg">
-              <i class="fa-solid fa-route"></i> Đặt Tour Trải Nghiệm Bàu Sấu
+              <i class="fa-solid fa-route" aria-hidden="true"></i> Nhận Cẩm Nang Tour Cát&nbsp;Tiên
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. CONTACT & NEWSLETTER SECTION -->
-    <section id="contact" class="contact-section" data-aos="fade-up">
+    <!-- CONTACT & GUESTBOOK SECTION (Pure CSS :target confirmation) -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
       <div class="section-container">
-        <div class="contact-card">
+        <div class="contact-card" data-aos="fade-up">
           <header class="section-header text-center">
-            <span class="section-badge"><i class="fa-solid fa-paper-plane"></i> Kết Nối Với Chúng Tôi</span>
-            <h2 class="section-title">Góp Ý & Đăng Ký Nhận Cẩm Nang Di Sản</h2>
+            <span class="section-badge"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Kết Nối Di Sản</span>
+            <h2 id="contact-title" class="section-title">Góp Ý &amp; Đăng Ký Cẩm Nang Du Lịch Đồng&nbsp;Nai</h2>
             <p class="section-desc">
-              Cùng chung tay gìn giữ, phát huy giá trị văn hóa lịch sử Đồng Nai đến thế hệ trẻ và bạn bè quốc tế.
+              Cùng chung tay lan tỏa tình yêu lịch sử, bảo tồn di tích Trấn&nbsp;Biên và đưa hình ảnh Đồng&nbsp;Nai vươn xa cùng bạn bè năm châu.
             </p>
           </header>
 
-          <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi liên hệ! Thông tin cẩm nang sẽ sớm được gửi tới email của bạn.');">
+          <!-- Form gửi dữ liệu điều hướng hash #cam-on bằng CSS thuần, không dùng JS -->
+          <form class="contact-form" action="#cam-on" method="get">
             <div class="form-row">
               <div class="form-group">
                 <label for="fullName" class="form-label">Họ và tên của bạn</label>
                 <div class="input-wrapper">
-                  <i class="fa-regular fa-user form-icon"></i>
+                  <i class="fa-regular fa-user form-icon" aria-hidden="true"></i>
                   <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Nguyễn Văn A" required>
                 </div>
               </div>
@@ -364,100 +565,115 @@
               <div class="form-group">
                 <label for="email" class="form-label">Địa chỉ Email</label>
                 <div class="input-wrapper">
-                  <i class="fa-regular fa-envelope form-icon"></i>
-                  <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required>
+                  <i class="fa-regular fa-envelope form-icon" aria-hidden="true"></i>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="nguyenvana@example.com" required>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="interest" class="form-label">Chủ đề bạn quan tâm nhất</label>
+              <label for="interest" class="form-label">Điểm di sản bạn quan tâm nhất</label>
               <div class="input-wrapper">
-                <i class="fa-solid fa-tags form-icon"></i>
+                <i class="fa-solid fa-tags form-icon" aria-hidden="true"></i>
                 <select id="interest" name="interest" class="form-input form-select" required>
-                  <option value="" disabled selected>-- Chọn chủ đề di sản --</option>
-                  <option value="tran-bien">Văn Miếu Trấn Biên & Đạo học Phương Nam</option>
-                  <option value="chien-khu-d">Căn cứ Cách mạng Chiến khu Đ</option>
-                  <option value="gom-bien-hoa">Làng nghề gốm men cổ Tân Vạn</option>
-                  <option value="cat-tien">Du lịch sinh thái Vườn Quốc gia Cát Tiên</option>
-                  <option value="le-hoi">Lễ hội Chùa Ông & Văn hóa Cồng chiêng</option>
+                  <option value="" disabled selected>-- Chọn tuyến điểm di tích --</option>
+                  <option value="tran-bien">Văn Miếu Trấn Biên &amp; Đạo học Phương Nam</option>
+                  <option value="chua-ong">Chùa Ông (Thất Phủ Cổ Miếu) &amp; Cù Lao Phố</option>
+                  <option value="chien-khu-d">Căn cứ Địa đạo Chiến khu Đ</option>
+                  <option value="buu-long">Thắng cảnh Bửu Long &amp; Hồ Long Ẩn</option>
+                  <option value="gom-bien-hoa">Làng nghề Gốm Tân Vạn 300 năm</option>
+                  <option value="cat-tien">Khu Ramsar Bàu Sấu - VQG Cát Tiên</option>
+                  <option value="tri-an">Hồ Trị An &amp; Rừng Chiến khu Mã Đà</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label">Ý kiến đóng góp hoặc câu hỏi của bạn</label>
+              <label for="message" class="form-label">Ý kiến đóng góp hoặc cảm nghĩ của bạn</label>
               <div class="input-wrapper">
-                <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Chia sẻ cảm nghĩ hoặc đề xuất của bạn về công tác bảo tồn di sản..."></textarea>
+                <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Chia sẻ cảm nhận về chuyến đi hoặc đề xuất ý tưởng số hóa di sản Đồng Nai..."></textarea>
               </div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">
-              <i class="fa-solid fa-paper-plane"></i> Gửi Ý Kiến & Nhận Bản Tin Miễn Phí
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Gửi Góp Ý &amp; Nhận Cẩm Nang Di Sản
             </button>
           </form>
+
+          <!-- Thông báo xác nhận Pure CSS kích hoạt qua pseudo-class :target -->
+          <p id="cam-on" class="form-thanks" role="status">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i> 
+            <span><strong>Cảm ơn bạn!</strong> Góp ý của bạn đã được ghi nhận vào Sổ Vàng Di Sản (bản thử nghiệm học thuật, không gửi email thực tế ra bên ngoài).</span>
+          </p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
+  <!-- ==================== 3. FOOTER (SEMANTIC HTML5 & NOBLE BURGUNDY HERITAGE COLOR) ==================== -->
   <footer class="site-footer">
     <div class="footer-container">
       
       <div class="footer-col brand-col">
         <a href="#hero" class="footer-brand">
-          <i class="fa-solid fa-landmark-dome"></i>
-          <span>DI SẢN ĐỒNG NAI</span>
+          <i class="fa-solid fa-landmark-dome" aria-hidden="true"></i>
+          <span>HÀO KHÍ TRẤN&nbsp;BIÊN</span>
         </a>
         <p class="footer-desc">
-          Dự án website bảo tồn và quảng bá giá trị lịch sử - văn hóa hào hùng của vùng đất Trấn Biên 325 năm. 
-          Sản phẩm thực hiện trong kỳ thi Giữa kỳ môn <strong>Thiết kế Web</strong> tại Đại học Lạc Hồng.
+          Website số hóa và tôn vinh chiều sâu văn hóa lịch sử hào hùng của mảnh đất Trấn&nbsp;Biên 325&nbsp;năm. 
+          Sản phẩm thực hiện trong kỳ thi Giữa kỳ môn <strong>Thiết kế Web</strong> theo hình thức Vibe Coding tại Đại học Lạc Hồng.
         </p>
         <div class="footer-socials">
-          <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" class="social-icon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#" class="social-icon" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/denzxje157/Anh_NguyenHoang_125000997" class="social-icon" aria-label="Xem mã nguồn trên GitHub của Nguyễn Hoàng Anh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://facebook.com" class="social-icon" aria-label="Facebook kết nối cộng đồng văn hóa Đồng Nai" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://youtube.com" class="social-icon" aria-label="Kênh YouTube phim tư liệu văn hóa Trấn Biên" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div class="footer-col links-col">
-        <h4 class="footer-title">Khám Phá Nhanh</h4>
+        <h3 class="footer-title">Khám Phá Tuyến Điểm</h3>
         <ul class="footer-links">
-          <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Trang Chủ</a></li>
-          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> Lịch Sử 325 Năm</a></li>
-          <li><a href="#heritage"><i class="fa-solid fa-chevron-right"></i> Di Tích Lịch Sử</a></li>
-          <li><a href="#crafts"><i class="fa-solid fa-chevron-right"></i> Làng Nghề & Lễ Hội</a></li>
-          <li><a href="#nature"><i class="fa-solid fa-chevron-right"></i> VQG Cát Tiên UNESCO</a></li>
+          <li><a href="#hero"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Trang Chủ</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Mốc Lịch Sử 1698</a></li>
+          <li><a href="#heritage"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Di Tích Lịch Sử</a></li>
+          <li><a href="#crafts"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Gốm Tân Vạn &amp; Lễ Hội</a></li>
+          <li><a href="#nature"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Kỳ Quan VQG Cát&nbsp;Tiên</a></li>
         </ul>
       </div>
 
       <div class="footer-col contact-col">
-        <h4 class="footer-title">Thông Tin Tác Giả & Đơn Vị</h4>
-        <ul class="footer-contact-list">
-          <li>
-            <i class="fa-solid fa-user-graduate"></i>
-            <div>
-              <strong>Sinh viên:</strong> Nguyễn Hoàng Anh
-              <p>MSSV: 125000997</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-building-columns"></i>
-            <div>
-              <strong>Đại học Lạc Hồng (LHU)</strong>
-              <p>Khoa Công nghệ Thông tin</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-map-location-dot"></i>
-            <div>
-              <strong>Địa bàn:</strong> TP. Biên Hòa, Tỉnh Đồng Nai
-            </div>
-          </li>
-        </ul>
+        <h3 class="footer-title">Tác Giả &amp; Đơn Vị Đào Tạo</h3>
+        <address class="footer-contact-address">
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+              <div>
+                <strong>Sinh viên:</strong> Nguyễn Hoàng Anh
+                <p>MSSV: 125000997</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+              <div>
+                <strong>Trường Đại học Lạc Hồng (LHU)</strong>
+                <p>Khoa Công nghệ Thông tin</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <div>
+                <strong>Liên hệ:</strong> <a href="mailto:125000997@lhu.edu.vn">125000997@lhu.edu.vn</a>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+              <div>
+                <strong>Địa bàn:</strong> TP. Biên Hòa, Tỉnh Đồng&nbsp;Nai
+              </div>
+            </li>
+          </ul>
+        </address>
       </div>
 
     </div>
@@ -465,24 +681,49 @@
     <!-- Copyright Bar -->
     <div class="footer-bottom">
       <div class="footer-bottom-container">
-        <p>&copy; 2026 <strong>Nguyễn Hoàng Anh (MSSV: 125000997)</strong> - Đại học Lạc Hồng. Mọi quyền được bảo lưu.</p>
-        <p class="footer-credit">Thực hiện theo hình thức Vibe Coding & Prompt Engineering.</p>
+        <p><small>&copy; 2026 <strong>Nguyễn Hoàng Anh (MSSV: 125000997)</strong> - Đại học Lạc Hồng. Mọi quyền được bảo lưu.</small></p>
+        <p class="footer-credit"><small>Phát triển theo quy trình Vibe Coding &amp; Prompt Engineering chuẩn mực.</small></p>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== SCRIPTS: AOS INITIALIZATION ==================== -->
+  <!-- ==================== 4. MOBILE APP BOTTOM NAVIGATION BAR (≤ 768px) ==================== -->
+  <nav class="mobile-bottom-bar" aria-label="Thanh tác vụ nhanh kiểu ứng dụng di động">
+    <a href="#hero" class="bottom-bar-item" aria-label="Về trang chủ">
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+      <span>Trang chủ</span>
+    </a>
+    <a href="#about" class="bottom-bar-item" aria-label="Xem lịch sử mở cõi">
+      <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i>
+      <span>Lịch sử</span>
+    </a>
+    <a href="#heritage" class="bottom-bar-item active" aria-label="Xem các di tích">
+      <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+      <span>Di tích</span>
+    </a>
+    <a href="#crafts" class="bottom-bar-item" aria-label="Xem làng nghề và lễ hội">
+      <i class="fa-solid fa-palette" aria-hidden="true"></i>
+      <span>Làng nghề</span>
+    </a>
+    <a href="#contact" class="bottom-bar-item" aria-label="Mở form góp ý">
+      <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+      <span>Góp ý</span>
+    </a>
+  </nav>
+
+  <!-- Nút Lên đầu trang (Pure CSS Floating Button) -->
+  <a href="#hero" class="back-to-top" aria-label="Cuộn lên đầu trang">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- ==================== 5. SCRIPTS (DUY NHẤT 1 THƯ VIỆN AOS & 1 ĐOẠN INIT) ==================== -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Khởi tạo thư viện AOS với cấu hình tối ưu chống giật lag và ngăn lỗi thanh cuộn ngang (overflow-x)
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({
-        duration: 800,        // Thời gian diễn ra hiệu ứng (ms)
-        offset: 80,           // Khoảng cách bắt đầu kích hoạt hiệu ứng (px)
-        once: true,           // Chỉ chạy hiệu ứng một lần duy nhất khi cuộn đến, không lặp lại gây rối mắt
-        easing: 'ease-out-cubic', // Đường cong gia tốc mượt mà
-        disable: 'mobile'     // Giữ hiệu năng tốt nhất trên thiết bị di động cấu hình yếu
-      });
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true,
+      easing: 'ease-out-cubic'
     });
   </script>
 </body>

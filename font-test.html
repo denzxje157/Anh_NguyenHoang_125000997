@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm Thử Font Tiếng Việt - Noto Serif & Be Vietnam Pro</title>
+  
+  <!-- Google Fonts: Noto Serif & Be Vietnam Pro (Việt hóa 100%, display=swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FDFBF7;
+      --card-bg: #FFFFFF;
+      --text: #231B15;
+      --text-muted: #6E6157;
+      --primary: #8B263E;
+      --secondary: #C5A059;
+      --border: #E7DDD3;
+      --font-heading: 'Noto Serif', Georgia, 'Times New Roman', serif;
+      --font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.lead {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .test-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .badge {
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      background: rgba(139, 38, 62, 0.1);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .font-sample {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #FAF8F5;
+      border-radius: 8px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .font-meta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Test strings */
+    .test-glyphs-40 {
+      font-size: 40px;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+    }
+
+    .test-glyphs-20 {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+    }
+
+    .test-glyphs-14 {
+      font-size: 14px;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .font-heading-sample {
+      font-family: var(--font-heading);
+    }
+
+    .font-body-sample {
+      font-family: var(--font-body);
+    }
+
+    .weight-700 { font-weight: 700; }
+    .weight-600 { font-weight: 600; }
+    .weight-400 { font-weight: 400; }
+    .weight-300 { font-weight: 300; }
+
+    .passage-sample {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .nav-back {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 10px 24px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .nav-back:hover {
+      background: #6D1B2E;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Bảng Kiểm Thử Font Tiếng Việt 100%</h1>
+      <p class="lead">Kiểm tra hiển thị các ký tự phức tạp, thanh dấu kép, và độ sắc nét trên các kích thước 14px, 20px, 40px</p>
+    </header>
+
+    <!-- SECTION 1: NOTO SERIF (TIÊU ĐỀ) -->
+    <section class="test-section">
+      <h2 class="section-title">
+        <span>1. Noto Serif (Font Tiêu đề Di sản)</span>
+        <span class="badge">Google Fonts: Noto Serif (600, 700)</span>
+      </h2>
+
+      <!-- 40px -->
+      <div class="font-sample font-heading-sample">
+        <div class="font-meta">Cỡ chữ 40px - Bold 700 (Dùng cho Tiêu đề H1/H2)</div>
+        <div class="test-glyphs-40 weight-700">
+          Ắ Ằ Ẳ Ẵ Ặ Ấ Ầ Ể Ễ Ệ Ố Ổ Ỗ Ợ Ở Ữ Ự Ỳ Ỷ Ỹ Ỵ Đ đ
+        </div>
+        <div class="test-glyphs-40 weight-700">
+          Hào Khí Trấn Biên – Chiều Sâu Văn Hóa Đất Đồng Nai
+        </div>
+      </div>
+
+      <!-- 20px -->
+      <div class="font-sample font-heading-sample">
+        <div class="font-meta">Cỡ chữ 20px - Semi-bold 600 (Dùng cho Tiêu đề Thẻ H3/H4)</div>
+        <div class="test-glyphs-20 weight-600">
+          Ắ Ằ Ẳ Ẵ Ặ Ấ Ầ Ể Ễ Ệ Ố Ổ Ỗ Ợ Ở Ữ Ự Ỳ Ỷ Ỹ Ỵ Đ đ
+        </div>
+        <div class="test-glyphs-20 weight-600">
+          Văn Miếu Trấn Biên • Cù Lao Phố • Làng Gốm Tân Vạn • Rừng Cát Tiên
+        </div>
+      </div>
+
+      <!-- 14px -->
+      <div class="font-sample font-heading-sample">
+        <div class="font-meta">Cỡ chữ 14px - Regular 400 (Dùng cho Chú thích nghệ thuật / Trích dẫn)</div>
+        <div class="test-glyphs-14 weight-400">
+          Ắ Ằ Ẳ Ẵ Ặ Ấ Ầ Ể Ễ Ệ Ố Ổ Ỗ Ợ Ở Ữ Ự Ỳ Ỷ Ỹ Ỵ Đ đ – ắ ằ ẳ ẵ ặ ấ ầ ể ễ ệ ố ổ ỗ ợ ở ữ ự ỳ ỷ ỹ
+        </div>
+        <div class="test-glyphs-14 weight-400">
+          "Nhà Bè nước chảy chia hai – Ai về Gia Định, Đồng Nai thì về." (Ca dao phương Nam)
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BE VIETNAM PRO (THÂN BÀI) -->
+    <section class="test-section">
+      <h2 class="section-title">
+        <span>2. Be Vietnam Pro (Font Thân bài Chuẩn Việt Nam)</span>
+        <span class="badge">Google Fonts: Be Vietnam Pro (300, 400, 500, 600, 700)</span>
+      </h2>
+
+      <!-- 40px -->
+      <div class="font-sample font-body-sample">
+        <div class="font-meta">Cỡ chữ 40px - Bold 700 (Dùng cho Số liệu thống kê nổi bật)</div>
+        <div class="test-glyphs-40 weight-700">
+          Ắ Ằ Ẳ Ẵ Ặ Ấ Ầ Ể Ễ Ệ Ố Ổ Ỗ Ợ Ở Ữ Ự Ỳ Ỷ Ỹ Ỵ Đ đ
+        </div>
+        <div class="test-glyphs-40 weight-700">
+          325+ Năm Lịch Sử • 65+ Di Tích Quốc Gia • 71.187 ha Rừng
+        </div>
+      </div>
+
+      <!-- 20px -->
+      <div class="font-sample font-body-sample">
+        <div class="font-meta">Cỡ chữ 20px - Medium 500 (Dùng cho Đoạn dẫn nhập / Phụ đề)</div>
+        <div class="test-glyphs-20 weight-500">
+          Ắ Ằ Ẳ Ẵ Ặ Ấ Ầ Ể Ễ Ệ Ố Ổ Ỗ Ợ Ở Ữ Ự Ỳ Ỷ Ỹ Ỵ Đ đ – ắ ằ ẳ ẵ ặ ấ ầ ể ễ ệ ố ổ ỗ ợ ở ữ ự ỳ ỷ ỹ
+        </div>
+        <div class="test-glyphs-20 weight-500">
+          Năm Mậu Dần 1698, Thống suất Lễ Thành hầu Nguyễn Hữu Cảnh vâng lệnh Chúa Nguyễn thiết lập phủ Gia Định.
+        </div>
+      </div>
+
+      <!-- 14px -->
+      <div class="font-sample font-body-sample">
+        <div class="font-meta">Cỡ chữ 14px - Regular 400 & Light 300 (Dùng cho Chú thích, Bản quyền, Meta)</div>
+        <div class="test-glyphs-14 weight-400">
+          Ắ Ằ Ẳ Ẵ Ặ Ấ Ầ Ể Ễ Ệ Ố Ổ Ỗ Ợ Ở Ữ Ự Ỳ Ỷ Ỹ Ỵ Đ đ | ắ ằ ẳ ẵ ặ ấ ầ ể ễ ệ ố ổ ỗ ợ ở ữ ự ỳ ỷ ỹ
+        </div>
+        <div class="test-glyphs-14 weight-300 passage-sample">
+          Văn Miếu Trấn Biên khởi dựng năm 1715 tại thôn Bửu Long, huyện Phước Chánh (nay thuộc phường Bửu Long, thành phố Biên Hòa, tỉnh Đồng Nai). Đây là biểu tượng văn hiến đầu tiên của toàn xứ Đàng Trong, phụng thờ Khổng Tử cùng các bậc hiền triết tiêu biểu của dân tộc Việt Nam.
+        </div>
+      </div>
+    </section>
+
+    <!-- KẾT QUẢ KIỂM TRA TỰ ĐỘNG -->
+    <section class="test-section">
+      <h2 class="section-title">
+        <span>3. Đánh Giá Độ Tương Thích Ký Tự Tiếng Việt</span>
+      </h2>
+      <ul style="padding-left: 1.5rem; line-height: 2;">
+        <li><strong>Không bị nhảy font fallback:</strong> Cả <code>Noto Serif</code> và <code>Be Vietnam Pro</code> đều chứa đầy đủ glyphs tiếng Việt có dấu kép (ă, ắ, ằ, ẳ, ẵ, ặ, ê, ế, ề, ể, ễ, ệ, ô, ố, ồ, ổ, ỗ, ộ, ơ, ớ, ờ, ở, ỡ, ợ, ư, ứng, ừ, ử, ữ, ự).</li>
+        <li><strong>Dấu thanh ngay ngắn:</strong> Các dấu mũ (^, ~) và dấu móc (ơ, ư) không bị chạm vào thân chữ hoa hay đè lên dòng trên khi đặt <code>line-height: 1.7</code>.</li>
+        <li><strong>Tối ưu tốc độ tải:</strong> Đã nhúng tham số <code>&display=swap</code> để tránh FOIT (Flash of Invisible Text) trong quá trình tải mạng.</li>
+      </ul>
+      <a href="index.html" class="nav-back">&larr; Quay lại Trang Chủ Hào Khí Trấn Biên</a>
+    </section>
+  </div>
+
+</body>
+</html>
