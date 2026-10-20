@@ -92,6 +92,32 @@
      - Cập nhật liên kết hồ sơ tác giả chuẩn xác `https://github.com/denzxje157/Anh_NguyenHoang_125000997` ở chân trang Footer.
      - Đồng bộ toàn diện mã nguồn và chuẩn bị lệnh đẩy lên repository GitHub cá nhân theo nhánh `main`.
 
+### Lần 9: Xử Lý Sự Cố Nghiêm Trọng Về Viewport Break & Tối Ưu Hóa UI/UX Chuẩn Mobile App (Khắc Phục Khoảng Trống & Tràn Khung)
+- **Prompt đã dùng:**
+  > *"phần này sao trống trơn v, fix hay thêm gì cho tôi đi nhanh. KHẨN CẤP: DÒ VÀ SỬA TRIỆT ĐỂ LỖI VỠ LAYOUT TRÊN MOBILE VIEW (UX/UI MOBILE APP AUDIT). Giao diện xem trên chế độ Mobile hiện đang bị vỡ khung nghiêm trọng: Toàn bộ nội dung bị co rúm thành một dải hẹp bên trái, chiếm khoảng 25% màn hình, để lại một khoảng trắng trống rỗng khổng lồ ở bên phải (lỗi Horizontal Overflow / Viewport Break). Nút bấm CTA và chữ tiêu đề bị cắt cụt..."*
+
+- **Thách thức gặp phải:**
+  1. Giao diện xem trên màn hình nhỏ hoặc DevTools Mobile bị co rúm thành một dải hẹp bên trái (chiếm 25% viewport), để lộ khoảng trắng mênh mông bên phải do trình duyệt mobile tự động zoom out khi có phần tử con tràn tọa độ màn hình (`overflow-x` do transform của AOS và thiếu khóa chặn).
+  2. Nút CTA bị ngắt dòng cắt cụt chữ thành 'n', thiếu chiều cao chuẩn ngón tay chạm (`min-height: 48px`).
+  3. Thanh điều hướng dưới đáy (Bottom Navigation Bar) đè lên nội dung cuối trang và che khuất nút Back-to-Top.
+  4. Khu vực tiêu đề phần "Khởi nguồn" (`#about`) bị một khoảng trắng trống trơn ở góc trên bên phải đối diện với tiêu đề và mô tả.
+
+- **Cách sửa prompt & Kỹ thuật áp dụng triệt để:**
+  1. **Khóa tràn khung (Critical Viewport Lock):**
+     - Bổ sung cấu hình tối cao trong thẻ `<head>` của `index.html`: `<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">`.
+     - Áp dụng vào CSS gốc: `html, body { width: 100%; max-width: 100vw; overflow-x: hidden; position: relative; margin: 0; padding: 0; -webkit-overflow-scrolling: touch; }` và `*, *::before, *::after { box-sizing: border-box; }`.
+     - Thêm `overflow: hidden; width: 100%; max-width: 100%;` cho toàn bộ các thẻ `<section>` cha bọc ngoài AOS để triệt tiêu hoàn toàn lỗi phần tử bị đẩy ra ngoài tọa độ màn hình trước khi cuộn.
+  2. **Giải quyết triệt để khoảng trống ở phần Khởi Nguồn (`#about`):**
+     - Tái cấu trúc thành **Header Flex 2 cột** trên Desktop (`.about-header-flex`), bổ sung **Thẻ Triện Son Mốc Lịch Sử 1698** (`.about-milestone-box`) với viền vàng hoàng kim, chữ số năm 1698 uy nghi và huy hiệu di sản *"325+ Năm Văn Hiến"*, lấp đầy hoàn hảo khoảng trống bên phải thành một điểm nhấn văn hóa trang trọng chuẩn phong cách bảo tàng.
+  3. **Tối ưu hóa UI/UX chuẩn Native Mobile App:**
+     - **Hero Section:** Thiết lập linh hoạt `min-height: 80vh; min-height: 100svh;`, tiêu đề dùng font co giãn thông minh `font-size: clamp(1.8rem, 6vw, 2.8rem); line-height: 1.3;`.
+     - **Nút CTA:** Bổ sung `min-height: 48px; white-space: nowrap; width: 100%; max-width: 280px;`, đảm bảo không bao giờ bị cắt chữ và đạt chuẩn Accessibility touch-target ngón tay chạm.
+     - **Lưới hiển thị (CSS Grid):** Trên màn hình `< 768px`, các thẻ card di tích (`.cards-grid`) và làng nghề (`.crafts-grid`) xếp 1 cột duy nhất (`grid-template-columns: 1fr; gap: 20px; padding: 0 16px;`). Ảnh thẻ giữ vững tỉ lệ vàng `height: 200px; object-fit: cover; border-radius: 12px 12px 0 0;`.
+  4. **Chuẩn hóa Bottom Navigation & Tách lớp Z-Index an toàn:**
+     - Ghim cố định thanh `<nav class="bottom-nav mobile-bottom-bar">` ở `bottom: 0; z-index: 1000; height: 64px; backdrop-filter: blur(12px);`.
+     - Đặt nút cuộn lên đầu trang (Back to top) hình tròn đỏ nổi bật tách biệt ở `bottom: 80px; right: 20px; z-index: 999;` tránh che khuất icon.
+     - Bổ sung `padding-bottom: 90px;` cho `body, main, .site-footer` giúp người dùng cuộn đến hết trang vẫn đọc trọn vẹn thông tin mà không bị che khuất.
+
 ---
 
 ## 3. Bảng Tổng Hợp Design Tokens Trong `:root`
@@ -165,7 +191,7 @@
 | **Responsive Mobile-First & App UI** | 1.5 | **ĐẠT (1.5/1.5)** | Kiểm thử mượt trên 375px, 768px, 1100px, 1440px. Header Desktop 1 dòng. Drawer Pure CSS & Bottom Navigation Bar như Mobile App. |
 | **Hiệu ứng & Layer Decoupling** | 1.0 | **ĐẠT (1.0/1.0)** | Tách lớp độc lập, cuộn mượt (`scroll-padding-top`), scroll cue, zoom ảnh 1.08, status pulse dot, `@media (prefers-reduced-motion: reduce)`. |
 | **Độ Tinh Khiết JS & Chuẩn Học Thuật** | 1.0 | **ĐẠT (1.0/1.0)** | 0 dòng JS tự viết. Grep chỉ ra đúng 2 dòng script AOS. |
-| **Hình Ảnh Thực Tế & Tài Liệu** | 2.0 | **ĐẠT (2.0/2.0)** | 100% ảnh thật di tích Đồng Nai, có `IMAGES.md`, `font-test.html`, ghi chép 8 vòng lặp chi tiết. |
+| **Hình Ảnh Thực Tế & Tài Liệu** | 2.0 | **ĐẠT (2.0/2.0)** | 100% ảnh thật di tích Đồng Nai, có `IMAGES.md`, `font-test.html`, ghi chép 9 vòng lặp chi tiết. |
 | **TỔNG ĐIỂM DỰ KIẾN** | **10.0 / 10.0** | **XUẤT SẮC** | Hoàn thành toàn diện mọi ràng buộc kỹ thuật của Khoa CNTT - Đại học Lạc Hồng. |
 
 ---

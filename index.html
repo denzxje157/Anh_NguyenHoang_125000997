@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Hào Khí Trấn Biên - Chiều Sâu Văn Hóa & Di Sản Đất Đồng Nai</title>
   
   <!-- SEO & Open Graph Meta Tags -->
@@ -174,14 +174,27 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="about-section" aria-labelledby="about-title">
       <div class="section-container">
-        <header class="section-header" data-aos="fade-up">
-          <span class="section-badge"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Hồn Thiêng Đất Phương Nam</span>
-          <h2 id="about-title" class="section-title">Khởi Nguồn Vùng Đất Địa Linh Nhân Kiệt Bên Sông Đồng&nbsp;Nai</h2>
-          <p class="section-desc">
-            Năm Mậu Dần 1698, Thống suất Lễ Thành hầu Nguyễn&nbsp;Hữu&nbsp;Cảnh vâng lệnh Chúa Nguyễn kinh lý phương Nam, 
-            thiết lập phủ Gia Định với hai huyện Phước Long (xứ Đồng&nbsp;Nai) và Tân Bình (xứ Sài Gòn), đặt nền móng vững bền cho cõi biên cương.
-          </p>
-        </header>
+        
+        <!-- Header Flex: Tiêu đề mở cõi kết hợp thẻ Triện son mốc lịch sử 1698 lấp đầy khoảng trống -->
+        <div class="about-header-flex" data-aos="fade-up">
+          <header class="section-header">
+            <span class="section-badge"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Hồn Thiêng Đất Phương Nam</span>
+            <h2 id="about-title" class="section-title">Khởi Nguồn Vùng Đất Địa Linh Nhân Kiệt Bên Sông Đồng&nbsp;Nai</h2>
+            <p class="section-desc">
+              Năm Mậu Dần 1698, Thống suất Lễ Thành hầu Nguyễn&nbsp;Hữu&nbsp;Cảnh vâng lệnh Chúa Nguyễn kinh lý phương Nam, 
+              thiết lập phủ Gia Định với hai huyện Phước Long (xứ Đồng&nbsp;Nai) và Tân Bình (xứ Sài Gòn), đặt nền móng vững bền cho cõi biên cương.
+            </p>
+          </header>
+
+          <aside class="about-milestone-box" aria-label="Mốc son lịch sử mở cõi 1698">
+            <div class="milestone-badge-top">
+              <i class="fa-solid fa-stamp" aria-hidden="true"></i> MỐC SON MỞ CÕI
+            </div>
+            <strong class="milestone-year">Năm 1698</strong>
+            <p class="milestone-text">Lễ Thành hầu Nguyễn&nbsp;Hữu&nbsp;Cảnh lập phủ Gia Định, khai sinh vùng đất Trấn&nbsp;Biên.</p>
+            <span class="milestone-pill"><i class="fa-solid fa-certificate" aria-hidden="true"></i> 325+ Năm Văn Hiến</span>
+          </aside>
+        </div>
 
         <div class="about-grid">
           <article class="about-article" data-aos="fade-up" data-aos-delay="100">
@@ -688,7 +701,7 @@
   </footer>
 
   <!-- ==================== 4. MOBILE APP BOTTOM NAVIGATION BAR (≤ 768px) ==================== -->
-  <nav class="mobile-bottom-bar" aria-label="Thanh tác vụ nhanh kiểu ứng dụng di động">
+  <nav class="mobile-bottom-bar bottom-nav" aria-label="Thanh tác vụ nhanh kiểu ứng dụng di động">
     <a href="#hero" class="bottom-bar-item" aria-label="Về trang chủ">
       <i class="fa-solid fa-house" aria-hidden="true"></i>
       <span>Trang chủ</span>

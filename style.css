@@ -73,16 +73,22 @@
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;        /* Đảm bảo cuộn không bị che khuất tiêu đề bởi sticky header */
   font-size: 16px;
-  max-width: 100%;
 }
 
 body {
@@ -91,11 +97,16 @@ body {
   color: var(--text-primary);
   line-height: 1.7;               /* Khoảng cách dòng thoáng cho tiếng Việt có dấu kép */
   letter-spacing: 0.01em;          /* Giữ khoảng cách chữ dễ đọc, không dính thanh dấu */
-  overflow-x: clip;                /* Chặn tràn ngang an toàn mà không phá vỡ sticky header */
-  max-width: 100%;
-  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Khóa chống tràn ngang tuyệt đối cho toàn bộ section cha bọc ngoài hiệu ứng AOS */
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 section[id] {
@@ -225,9 +236,11 @@ p {
   font-weight: 600;
   font-size: 0.95rem;
   padding: 12px 28px;
+  min-height: 48px;               /* Chuẩn touch-target tối thiểu 48px cho ngón tay trên mobile */
   border-radius: var(--radius-full);
   border: 2px solid transparent;
   cursor: pointer;
+  white-space: nowrap;            /* Chống ngắt gãy chữ thành 'n' trên mobile */
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
               background-color var(--transition-fast), 
@@ -655,14 +668,17 @@ p {
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  min-height: 90vh;
+  min-height: 80vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl);
+  padding: clamp(3.5rem, 8vw, 6.5rem) 16px clamp(2rem, 5vw, 4rem);
   color: var(--text-inverse);
+  width: 100%;
+  max-width: 100%;
   /* Ảnh thật sông Đồng Nai kết hợp lớp phủ di sản Đỏ son & Vàng hoàng kim */
   background: linear-gradient(to bottom, rgba(122, 31, 53, 0.82) 0%, rgba(61, 18, 27, 0.88) 55%, rgba(25, 18, 14, 0.96) 100%),
               url('assets/images/hero-bg.webp') center/cover no-repeat;
@@ -708,10 +724,10 @@ p {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
   color: #FFFFFF;
   margin-bottom: var(--spacing-lg);
-  line-height: 1.25;
+  line-height: 1.3;
   letter-spacing: -0.01em;
 }
 
@@ -930,6 +946,86 @@ p {
   padding: var(--section-y) 0;
   background-color: var(--bg-main);
   position: relative;
+}
+
+/* Header Flex 2 cột: Tiêu đề mở cõi kết hợp thẻ Triện son mốc lịch sử 1698 lấp đầy khoảng trống */
+.about-header-flex {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.about-header-flex .section-header {
+  margin-bottom: 0;
+}
+
+/* Thẻ Triện son Mốc Lịch Sử 1698 lấp đầy khoảng trống bên phải */
+.about-milestone-box {
+  background: linear-gradient(145deg, rgba(139, 38, 62, 0.05) 0%, rgba(197, 160, 89, 0.12) 100%);
+  border: 1.5px solid var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(139, 38, 62, 0.06);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.about-milestone-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.milestone-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--primary-color);
+}
+
+.milestone-year {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  color: var(--primary-color);
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(139, 38, 62, 0.15);
+}
+
+.milestone-text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.milestone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+  margin-top: 4px;
+  box-shadow: 0 2px 8px rgba(139, 38, 62, 0.25);
 }
 
 .about-grid {
@@ -1772,11 +1868,100 @@ p {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 66px;          /* Nhường chỗ cho Mobile Bottom Bar */
+  body,
+  main,
+  .site-footer {
+    padding-bottom: 90px;          /* Đảm bảo nội dung cuối không bao giờ bị thanh Bottom Nav che khuất */
   }
 
-  /* Kích hoạt Mobile Bottom App Bar */
+  .section-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* Hero Section linh hoạt chuẩn Mobile */
+  .hero-section {
+    min-height: 80vh;
+    min-height: 100svh;
+    padding: clamp(3rem, 10vw, 5rem) 16px 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    line-height: 1.3;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Nút CTA: Chuẩn touch-target tối thiểu 48px, không ngắt gãy chữ */
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    min-height: 48px;
+    white-space: nowrap;
+    margin: 0 auto;
+  }
+
+  /* Header Section Khởi Nguồn & Mốc Son 1698 trên Mobile */
+  .about-header-flex {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .about-figure {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+  }
+
+  .about-figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* Lưới hiển thị Di tích & Làng nghề: 1 cột duy nhất tràn vừa vặn màn hình */
+  .cards-grid,
+  .crafts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  /* Hình ảnh trong card giữ chuẩn tỉ lệ vàng trên di động */
+  .card-media,
+  .craft-figure {
+    width: 100%;
+    height: 200px;
+    aspect-ratio: auto;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .card-media img,
+  .craft-figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* CHUẨN HÓA THANH BOTTOM NAVIGATION (NHƯ APP NATIVE CAO CẤP) */
+  .bottom-nav,
   .mobile-bottom-bar {
     display: flex;
     align-items: center;
@@ -1785,14 +1970,15 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 62px;
-    background-color: rgba(253, 251, 247, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid var(--border-color);
-    box-shadow: 0 -4px 18px rgba(35, 27, 21, 0.08);
-    z-index: 998;
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    width: 100%;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom, 8px);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
   }
 
   .bottom-bar-item {
@@ -1828,18 +2014,30 @@ p {
     transform: scale(0.92);
   }
 
+  /* Nút cuộn lên đầu trang (Back to top) hình tròn đỏ nổi bên trên thanh Bottom Nav */
   .back-to-top {
-    bottom: 76px;                  /* Nâng lên trên bottom bar */
-    right: 18px;
-    width: 44px;
-    height: 44px;
-    font-size: 1.05rem;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 999;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 18px rgba(139, 38, 62, 0.45);
+    border: 2px solid var(--secondary-color);
   }
 
   .hero-stats {
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
+    width: 100%;
   }
 
   .form-row {
@@ -1866,19 +2064,6 @@ p {
 }
 
 @media (max-width: 480px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
   .hero-scroll-cue {
     margin-top: var(--spacing-lg);
   }
